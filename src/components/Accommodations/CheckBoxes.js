@@ -35,6 +35,7 @@ const CheckBoxes = () => (
 //       return data.spEdClassSupports.map(({ id, supportTag, supportItem }) => (
         <div >
               
+              
           <Checkbox variant="contained" style={styles.button} />
           HEllo 
      
