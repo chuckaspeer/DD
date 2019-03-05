@@ -22,7 +22,7 @@ const styles = theme => ({
 //   "Teacher Forms",
 //   "Admin Forms"
 // ];
-const formOptions = ["new student form", "old teacher form"];
+const formOptions = ["Profile", "schedules", "students", "FormBuilder"];
 
 class FormMenu extends React.Component {
   state = {
@@ -43,7 +43,7 @@ class FormMenu extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
+    // const { classes } = this.props;
     const { anchorEl } = this.state;
 
     return (
@@ -70,8 +70,9 @@ class FormMenu extends React.Component {
           >
             {formOptions.map((option, index) => (
               <MenuItem 
+            
                 key={option}
-                component ={Link} to={`/FormMenu/${index}`}
+                component ={Link} to={`/FormMain/${index}`}
                 selected={index === this.state.selectedIndex}
                 onClick={event => this.handleMenuItemClick(event, index)}
               >

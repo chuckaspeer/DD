@@ -5,6 +5,7 @@ import { Switch, Route } from "react-router-dom";
 import HeaderDrawer from './components/LayOut/HeaderDrawer'
 import ReportsMain from './components/Reports/ReportsMain'
 import Student from './components/Student/Student'
+import FormMain from './components/Forms/FormMain'
 
 export default (
    <HeaderDrawer >
@@ -15,7 +16,7 @@ export default (
   <Route exact component={ClassMain} path='/classmain/0'/>
   <Route component ={Student} path ='/student/'/>
   <Route exact component={ReportsMain} path="/reportsmain"/>
-
+  <Route exact component={FormMain} path="/formmain/0"/>
   </Switch>
   </HeaderDrawer>
 );

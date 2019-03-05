@@ -37,7 +37,7 @@ const CheckBoxes = () => (
               
               
           <Checkbox variant="contained" style={styles.button} />
-          HEllo 
+          Hello from CheckBoxes
      
         </div>
   //     ));
