@@ -22,7 +22,7 @@ const styles = theme => ({
 //   "Teacher Forms",
 //   "Admin Forms"
 // ];
-const formOptions = ["Profile", "schedules", "students", "FormBuilder"];
+const formOptions = ["ARD Input Form", "Profile", "schedules", "students", "FormBuilder"];
 
 class FormMenu extends React.Component {
   state = {
