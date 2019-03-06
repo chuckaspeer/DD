@@ -1,95 +1,88 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
-import MenuItem from "@material-ui/core/MenuItem";
-import Menu from "@material-ui/core/Menu";
-import {Link} from 'react-router-dom'
+// import MenuItem from "@material-ui/core/MenuItem";
+// import Menu from "@material-ui/core/Menu";
+import { Link } from "react-router-dom";
 // import PropTypes from "prop-types";
+// import {Button} from '@material-ui/core'
+// import List from "@material-ui/core/List";
+// import ListItem from "@material-ui/core/ListItem";
+// import ListItemText from "@material-ui/core/ListItemText";
+import SelectButton from "../../utils/SelectButton";
 
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit
+  },
+  input: {
+    display: "none"
+  }
+});
 
 const spEdStudents = [
-    {
-      "id": 1,
-      "name": "John"
-    },
-    {
-      "id": 2,
-      "name": "Dan"
-    },
-    {
-      "id": 3,
-      "name": "Sue"
-    }, 
-    {
-      "id": 4,
-      "name":"Brian"
-    }
-  ]
+  {
+    id: 1,
+    name: "John"
+  },
+  {
+    id: 2,
+    name: "Dan"
+  },
+  {
+    id: 3,
+    name: "Sue"
+  },
+  {
+    id: 4,
+    name: "Brian"
+  }
+];
 
-export default class ClassSpEd extends Component {
-    state = {
-        anchorEl: null,
-        selectedIndex: [],
-        
-      };
+ class ClassSpEd extends Component {
+  state = {
+    selectedIndex: []
+  };
+
+  handleClickListItem = event => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleButtonClick = (event, index) => {
+    this.setState({ selectedIndex: index, anchorEl: null });
+  };
+
+  handleClose = () => {
+    this.setState({ anchorEl: null });
+  };
+  render() {
     
-      handleClickListItem = event => {
-        this.setState({ anchorEl: event.currentTarget });
-      };
-    
-      handleMenuItemClick = (event, index) => {
-        this.setState({ selectedIndex: index, anchorEl: null });
-       
-      };
-    
-      handleClose = () => {
-        this.setState({ anchorEl: null });
-      };
-    render() {
-        const { anchorEl } = this.state;
-        return (
-            <div>
-                Hello from ClassSpEd
-                <div>
-        
-        <List key ='classMain' component="nav">
-        
-          <ListItem
-            button
-            aria-haspopup="true"
-            aria-controls="lock-menu"
-            aria-label="ClasseMain"
-            onClick={this.handleClickListItem}
-          >
-            <ListItemText
-              primary="SpEd"
-              secondary={spEdStudents[this.state.selectedIndex]}
-            />
-          </ListItem>
-        <Menu
-        key={spEdStudents}
-            id="students"
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={this.handleClose}
-          >
+    const { classes } = this.props;
+    return (
+      <div>
+        Hello from ClassSpEd
+        <div>
+          <div>
             {spEdStudents.map((student, id) => (
-              <MenuItem
-              component ={Link} to={`/student/:id`}
+              <SelectButton
+              
+                component={Link}
+                to={`/student/:id`}
                 key={student.id}
                 selected={id === this.state.selectedIndex}
-                onClick={event => this.handleMenuItemClick(event, id)}
+                onClick={event => this.handleButtonClick(event, id)}
+              
               >
-             
-                {student.name}
-              </MenuItem>
+              
+              {student.name }
+              </SelectButton>
             ))}
-          </Menu>
-        </List>
+            
+          </div>
+
+          {/* </List>  */}
+        </div>
       </div>
-            </div>
-        )
-    }
+    );
+  }
 }
+export default (ClassSpEd)

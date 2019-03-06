@@ -26,10 +26,10 @@ import MoreIcon from "@material-ui/icons/MoreVert";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 
 
-import ClassMenu from '../Nav/ClassMenu'
+import ClassMenu from '../Menus/ClassMenu'
 import logo_DD_3 from "../../utils/images/logo_DD_3.png";
-import FromMenu from '../Nav/FormMenu'
-import ReportMenu from "../Nav/ReportMenu";
+import FromMenu from '../Menus/FormMenu'
+import ReportMenu from "../Menus/ReportMenu";
 
 const drawerWidth = 200;
 
