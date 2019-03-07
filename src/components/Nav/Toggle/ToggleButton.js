@@ -1,22 +1,52 @@
-import React, { Component } from 'react'
+import React from "react";
+import FormLabel from "@material-ui/core/FormLabel";
+import FormControl from "@material-ui/core/FormControl";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import FormHelperText from "@material-ui/core/FormHelperText";
+import Switch from "@material-ui/core/Switch";
+import { Link } from "react-router-dom";
+import ClassSpEd from '../../ClassRm/ClassSpEd'
+import ClassView from '../../ClassRm/ClassView'
 
-export default class ToggleButton extends Component {
-    state ={
-        on: false,
-    }
-    toggle = () => {
-this.setState({
-    on: !this.state.on
-})
-    }
+class ToggleButton extends React.Component {
+  state = {
+    ToggleSwitch: false
+  };
+
+  handleChange = name => event => {
+    this.setState({ [name]: event.target.checked });
+  };
+
   render() {
+    let AccomView
+    if (!this.state.ToggleSwitch) {
+      AccomView = <ClassSpEd />;
+    } else {
+      AccomView = <ClassView />;
+    }
     return (
-      <div>
-          {
-              this.state.on && <h4>Toggle Me</h4>
-          }
-        <button onClick={this.toggle}>Show/Hide</button>
-      </div>
-    )
+      <>
+      <FormControl component="fieldset">
+        <FormLabel component="legend">Student/Class-views</FormLabel>
+        <FormGroup>
+          <FormControlLabel
+            control={
+              <Switch
+                checked={this.state.ToggleSwitch}
+                onChange={this.handleChange("ToggleSwitch")}
+                value="ToggleSwitch"
+              />
+            }
+            label="Toggle"
+          />
+        </FormGroup>
+      
+      </FormControl>
+            <div>{AccomView}</div>
+      </>
+    );
   }
 }
+
+export default ToggleButton;

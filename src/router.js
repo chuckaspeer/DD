@@ -6,10 +6,12 @@ import HeaderDrawer from './components/LayOut/HeaderDrawer'
 import ReportsMain from './components/Reports/ReportsMain'
 import Student from './components/Student/Student'
 import FormMain from './components/Forms/FormMain'
+import ClassView from './components/ClassRm/ClassView'
 
 export default (
    <HeaderDrawer >
-  <Switch>
+  <Switch> 
+   
     {/* <Route exact component={Login} path="/" /> */}
    
     {/* <Route exact component={Home} path="/home" /> */}
@@ -17,6 +19,8 @@ export default (
   <Route component ={Student} path ='/student/'/>
   <Route exact component={ReportsMain} path="/reportsmain"/>
   <Route exact component={FormMain} path="/formmain/0"/>
+  <Route exact component={ClassView} path='/classview/'/>
+  
   </Switch>
   </HeaderDrawer>
 );

@@ -1,14 +1,7 @@
 import React, { Component } from "react";
-
-// import MenuItem from "@material-ui/core/MenuItem";
-// import Menu from "@material-ui/core/Menu";
 import { Link } from "react-router-dom";
-// import PropTypes from "prop-types";
-// import {Button} from '@material-ui/core'
-// import List from "@material-ui/core/List";
-// import ListItem from "@material-ui/core/ListItem";
-// import ListItemText from "@material-ui/core/ListItemText";
-import SelectButton from "../../utils/SelectButton";
+import {Button} from '@material-ui/core'
+import { withStyles } from "@material-ui/core";
 
 const styles = theme => ({
   button: {
@@ -59,30 +52,28 @@ const spEdStudents = [
     const { classes } = this.props;
     return (
       <div>
-        Hello from ClassSpEd
+        DIV Hello from ClassSpEd
         <div>
           <div>
             {spEdStudents.map((student, id) => (
-              <SelectButton
-              
+              <Button
+              className={classes.root}
                 component={Link}
                 to={`/student/:id`}
                 key={student.id}
                 selected={id === this.state.selectedIndex}
                 onClick={event => this.handleButtonClick(event, id)}
-              
               >
-              
               {student.name }
-              </SelectButton>
+               </Button>
             ))}
-            
+           
           </div>
 
-          {/* </List>  */}
+          
         </div>
       </div>
     );
   }
 }
-export default (ClassSpEd)
+export default withStyles(styles)(ClassSpEd)
