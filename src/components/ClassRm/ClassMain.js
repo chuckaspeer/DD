@@ -1,16 +1,15 @@
 import React, { Component } from "react";
-import ClassSpEd from "./ClassSpEd";
-import ToggleButton from '../Nav/Toggle/ToggleButton'
-import ClassView from './ClassView'
+import ToggleButton from '../Toggle/ToggleButton'
+
+
 class ClassMain extends Component {
   render(props) {
 
-    
     return (
       <div>
-        <h1>ClassMain</h1>
+        <span><h1>ClassMain</h1></span>
         
-        <ToggleButton/>
+        <ToggleButton position ="right"/>
         
 
       </div>

@@ -1,6 +1,6 @@
 import React from "react";
 
-function Page2() {
+function ARD2() {
   return <div>Hello from page 2</div>;
 }
-export default Page2;
+export default ARD2;

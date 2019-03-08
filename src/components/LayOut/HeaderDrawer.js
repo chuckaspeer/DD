@@ -197,7 +197,7 @@ class HeaderDrawer extends React.Component {
       <Fragment> 
         <CssBaseline />
       <div className={classes.root}>
-        <AppBar position="absolute" className={classes.appBar}>
+        <AppBar position="fixed" className={classes.appBar}>
           <Toolbar>
             <IconButton
               color="inherit"

@@ -6,8 +6,8 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Page1 from "./Page1";
-import Page2 from "./Page2";
+import ARD1 from "./ARD1";
+import ARD2 from "./ARD2";
 
 const styles = theme => ({
   root: {
@@ -36,9 +36,9 @@ function getStepContent(step) {
     case 0:
       return "Select campaign settings...";
     case 1:
-      return <Page1 />;
+      return <ARD1 />;
     case 2:
-      return <Page2 />;
+      return <ARD2 />;
     case 3:
       return "I'm Out!";
     default:

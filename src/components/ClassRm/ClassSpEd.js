@@ -1,37 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import {Button} from '@material-ui/core'
+import { Button } from "@material-ui/core";
 import { withStyles } from "@material-ui/core";
+import { spEdStudents } from "../../utils/Data";
+import PropTypes from "prop-types";
+import { Card, CardContent } from "@material-ui/core";
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit
+    margin: theme
   },
   input: {
-    display: "none"
+    display: ""
   }
 });
 
-const spEdStudents = [
-  {
-    id: 1,
-    name: "John"
-  },
-  {
-    id: 2,
-    name: "Dan"
-  },
-  {
-    id: 3,
-    name: "Sue"
-  },
-  {
-    id: 4,
-    name: "Brian"
-  }
-];
-
- class ClassSpEd extends Component {
+class ClassSpEd extends Component {
   state = {
     selectedIndex: []
   };
@@ -48,32 +32,39 @@ const spEdStudents = [
     this.setState({ anchorEl: null });
   };
   render() {
-    
-    const { classes } = this.props;
+    const { classes} = this.props;
+  
     return (
       <div>
-        DIV Hello from ClassSpEd
+        <strong>ClassSpEd</strong>
         <div>
-          <div>
-            {spEdStudents.map((student, id) => (
-              <Button
-              className={classes.root}
-                component={Link}
-                to={`/student/:id`}
-                key={student.id}
-                selected={id === this.state.selectedIndex}
-                onClick={event => this.handleButtonClick(event, id)}
-              >
-              {student.name }
-               </Button>
-            ))}
-           
-          </div>
-
           
+          <Card className={classes.card}>
+            <div>
+              {spEdStudents.map((student, id) => (
+                <CardContent>
+                  <Button
+                    variant="contained"
+                    className={classes.button}
+                    component={Link}
+                    to={`/student/:id`}
+                    key={student.id}
+                    selected={id === this.state.selectedIndex}
+                    onClick={event => this.handleButtonClick(event, id)}
+                  >
+                  
+                   {student.first_name}, {student.last_name}
+                  </Button>
+                </CardContent>
+              ))}
+            </div>
+          </Card>
         </div>
       </div>
     );
   }
 }
-export default withStyles(styles)(ClassSpEd)
+ClassSpEd.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+export default withStyles(styles)(ClassSpEd);
