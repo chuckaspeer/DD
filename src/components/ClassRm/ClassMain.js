@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ToggleButton from '../Toggle/ToggleButton'
-import { Typography } from "@material-ui/core";
+
 
 
 class ClassMain extends Component {
@@ -8,7 +8,7 @@ class ClassMain extends Component {
 
     return (
       <div>
-        <Typography>ClassMain</Typography>
+        ClassMain
         
         <ToggleButton position ="right"/>
         

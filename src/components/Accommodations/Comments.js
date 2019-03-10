@@ -3,22 +3,17 @@ import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-// import Button from "../../utils/CommentButton";
+ import Button from "../../utils/CommentButton";
 
 const styles = theme => ({
   container: {
     display: "flex",
-    flexWrap: "wrap"
+    flexWrap: "wrap",
+    width: "100%"
   },
   textField: {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit
-  },
-  dense: {
-    marginTop: 16
-  },
-  menu: {
-    width: 200
   }
 });
 const inputProps = {
@@ -46,18 +41,21 @@ class Comments extends React.Component {
       <React.Fragment>
         <form className={classes.container} onSubmit={this.submit} noValidate autoComplete="off">
           <TextField
-            id="outlined-flexible"
-            label="Comments"
+            id="outlined-full-width"
+            label="Academic & Accomodation Comments"
+            style={{margin:8}}
             multiline
-            rowsMax="8"
+            fullWidth
+            rowsMax="12"
             value={this.state.comments}
             onChange={this.handleChange("Comments")}
             className={classes.textField}
-            margin="normal"
+            
             variant="outlined"
             inputProps={inputProps}
           />
           {/* <Button type="submit" value="Submit" /> */}
+          
         </form>
         
       </React.Fragment>

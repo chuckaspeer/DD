@@ -37,7 +37,7 @@ const CheckBoxes = () => (
               
               <ul>
          <li><Checkbox variant="contained" style={styles.button}/>
-          Hello from CheckBox1ytcviu iuviuvkuvkjvkjhvkjv kujvkiuvkigvjhgvhjgvkjhvkjhvkiuh;oihlkbl vkuyvkujvkujvkiuvkuv viujkjhbiugoubkjhb,kjboib oiubb ibi piublkjhbliboliub</li> 
+          Hello from CheckBox1sdfasdfsadf sadfasdf sd asd fasdf asdfasdfasdfas</li> 
           <li><Checkbox variant="contained" style={styles.button}/>
           Hello from CheckBox2</li>
           <li><Checkbox variant="contained" style={styles.button}/>
@@ -49,7 +49,6 @@ const CheckBoxes = () => (
           <li><Checkbox variant="contained" style={styles.button}/>
           Hello from CheckBox6</li>
      </ul>
-     
         </div>
   //     ));
   //   }}

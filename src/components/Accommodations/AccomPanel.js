@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import classNames from "classnames";
+
 import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
@@ -57,7 +57,6 @@ class AccomPanel extends Component {
     this.setState({ selectedIndex: index, anchorEl: null });
   };
   render() {
- 
     const { classes } = this.props;
     return (
       <div className={classes.root}>
@@ -69,7 +68,7 @@ class AccomPanel extends Component {
                   {students.first_name}, {students.last_name}
                 </Typography>
                 <div>
-                  <h6
+                  <h5
                     variant="contained"
                     key={students.id}
                     selected={id === this.state.selectedIndex}
@@ -78,7 +77,7 @@ class AccomPanel extends Component {
                     <ul>
                       <div />
                     </ul>
-                  </h6>
+                  </h5>
                 </div>
               </div>
               <div className={classes.column}>
@@ -86,22 +85,27 @@ class AccomPanel extends Component {
                   Accomidations
                 </Typography>
               </div>
-            </ExpansionPanelSummary>
-            <ExpansionPanelDetails className={classes.details}>
               <div className={classes.column}>
-                <Checkboxes />
+                <Typography className={classes.secondaryHeading}>
+                  Behavior
+                </Typography>
               </div>
-              <div className={classNames(classes.column, classes.helper)}>
-                <Comments />
+              <div className={classes.column}>
+                <Typography className={classes.secondaryHeading}>
+                  Goals
+                </Typography>
               </div>
-            </ExpansionPanelDetails>
-
+            </ExpansionPanelSummary>
+            
+              <Checkboxes className={classes}/>
+            
             <Divider />
             <ExpansionPanelActions>
-              <Button size="small">Cancel</Button>
+              <Comments />
               <Button size="small" color="primary">
                 Save
               </Button>
+              <Button size="small">Cancel</Button>
             </ExpansionPanelActions>
           </ExpansionPanel>
         ))}

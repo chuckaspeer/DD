@@ -1,5 +1,5 @@
 import React from "react";
-// import Home from "./components/Home/Home";
+import Home from "./components/Home/Home";
 import ClassMain from './components/ClassRm/ClassMain'
 import { Switch, Route } from "react-router-dom";
 import HeaderDrawer from './components/LayOut/HeaderDrawer'
@@ -14,7 +14,7 @@ export default (
    
     {/* <Route exact component={Login} path="/" /> */}
    
-    {/* <Route exact component={Home} path="/home" /> */}
+   <Route exact component={Home} path="/home" />
   <Route exact component={ClassMain} path='/classmain/0'/>
   
   <Route exact component={ReportsMain} path="/reportsmain"/>
