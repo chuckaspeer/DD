@@ -4,8 +4,8 @@ import FormControl from "@material-ui/core/FormControl";
 import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
-import ClassSpEd from '../ClassRm/ClassSpEd'
 import ClassView from '../ClassRm/ClassView'
+import AccomPanel from '../Accommodations/AccomPanel'
 
 class ToggleButton extends React.Component {
   state = {
@@ -19,7 +19,7 @@ class ToggleButton extends React.Component {
   render() {
     let AccomView
     if (!this.state.ToggleSwitch) {
-      AccomView = <ClassSpEd />;
+      AccomView = <AccomPanel/>;
     } else {
       AccomView = <ClassView />;
     }

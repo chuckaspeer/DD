@@ -1,37 +1,9 @@
-// import React, { Component } from "react";
-
-// class Comments extends Component {
-//   state = {
-//     comment: ""
-//   };
-
-//   onChangeHandler = e => {
-//     this.props.typed(e.target.value);
-//     this.setState({ comment: e.target.value });
-//   };
-
-//   render() {
-//     return (
-//       <div className="input">
-//         Comment:
-//         <textarea
-//           className="comment"
-//           onChange={this.onChangeHandler}
-//           type="text"
-//         />
-//       </div>
-//     );
-//   }
-// }
-// export default Comments;
 
 import React from "react";
 import PropTypes from "prop-types";
-//import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
-//import MenuItem from "@material-ui/core/MenuItem";
 import TextField from "@material-ui/core/TextField";
-import Button from "../../utils/CommentButton";
+// import Button from "../../utils/CommentButton";
 
 const styles = theme => ({
   container: {
@@ -85,7 +57,7 @@ class Comments extends React.Component {
             variant="outlined"
             inputProps={inputProps}
           />
-          <Button type="submit" value="Submit" />
+          {/* <Button type="submit" value="Submit" /> */}
         </form>
         
       </React.Fragment>

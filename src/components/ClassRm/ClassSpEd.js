@@ -42,7 +42,7 @@ class ClassSpEd extends Component {
           <Card className={classes.card}>
             <div>
               {spEdStudents.map((student, id) => (
-                <CardContent>
+                <CardContent key = {id}>
                   <Button
                     variant="contained"
                     className={classes.button}

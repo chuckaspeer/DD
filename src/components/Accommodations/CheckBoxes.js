@@ -35,9 +35,20 @@ const CheckBoxes = () => (
 //       return data.spEdClassSupports.map(({ id, supportTag, supportItem }) => (
         <div >
               
-              
-          <Checkbox variant="contained" style={styles.button} />
-          Hello from CheckBoxes
+              <ul>
+         <li><Checkbox variant="contained" style={styles.button}/>
+          Hello from CheckBox1ytcviu iuviuvkuvkjvkjhvkjv kujvkiuvkigvjhgvhjgvkjhvkjhvkiuh;oihlkbl vkuyvkujvkujvkiuvkuv viujkjhbiugoubkjhb,kjboib oiubb ibi piublkjhbliboliub</li> 
+          <li><Checkbox variant="contained" style={styles.button}/>
+          Hello from CheckBox2</li>
+          <li><Checkbox variant="contained" style={styles.button}/>
+          Hello from CheckBox3</li> 
+          <li><Checkbox variant="contained" style={styles.button}/>
+          Hello from CheckBox4</li>
+          <li><Checkbox variant="contained" style={styles.button}/>
+          Hello from CheckBox5</li> 
+          <li><Checkbox variant="contained" style={styles.button}/>
+          Hello from CheckBox6</li>
+     </ul>
      
         </div>
   //     ));

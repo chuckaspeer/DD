@@ -31,7 +31,7 @@ import logo_DD_3 from "../../utils/images/logo_DD_3.png";
 import FromMenu from '../Menus/FormMenu'
 import ReportMenu from "../Menus/ReportMenu";
 
-const drawerWidth = 200;
+const drawerWidth = 150;
 
 const styles = theme => ({
   root: {
