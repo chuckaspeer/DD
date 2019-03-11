@@ -259,5 +259,6 @@ module.exports = {
     "Accommodations",
     "Behavior",
     "Objectives"
-  ]
+  ],
+  panelTabs: ["Profile", "Accommodations", "Behavior", "Objectives"]
 };
