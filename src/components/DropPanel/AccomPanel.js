@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
+import Paper from "@material-ui/core/Paper";
 import Checkboxes from "../Accommodations/CheckBoxes";
 import Comments from "../Accommodations/Comments";
 import { spEdStudents } from "../../utils/Data";
@@ -65,12 +66,12 @@ class AccomPanel extends Component {
         {spEdStudents.map((students, id) => (
           <ExpansionPanel key={students.id} className={classes.coulmn}>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <div className={classes.column}>
-                <Typography className={classes.heading}>
+              <Paper className={classes.heading}>
+                <div className={classes.column}>
                   {students.first_name}, {students.last_name}
-                </Typography>
-               
-              </div>     <TabContainer/>
+                </div>
+              </Paper>
+              <TabContainer />
             </ExpansionPanelSummary>
 
             <Checkboxes className={classes} />

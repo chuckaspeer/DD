@@ -36,17 +36,18 @@ class ScrollableTabsButtonAuto extends React.Component {
   };
 
   render() {
-    const { classes, panels } = this.props;
+    const { classes } = this.props;
     const { value } = this.state;
 
     return (
       <div className={classes.root}>
-        <Paper position="" color="default">
+        {/* <Paper position="absolute" color="default"> */}
           <Tabs
             value={value}
             onChange={this.handleChange}
             indicatorColor="primary"
             textColor="primary"
+            centered
             // variant="scrollable"
             // scrollButtons="auto"
           >
@@ -55,10 +56,9 @@ class ScrollableTabsButtonAuto extends React.Component {
             <Tab label="Behavior" />
             <Tab label="Uploads" />
             <Tab label="Reports" />
-            <Tab label="Item Six" />
-            <Tab label="Item Seven" />
+           
           </Tabs>
-        </Paper>
+        {/* </Paper> */}
         {/* {value === 0 && <TabContainer>Item One</TabContainer>}
         {value === 1 && <TabContainer>Item Two</TabContainer>}
         {value === 2 && <TabContainer>Item Three</TabContainer>}
