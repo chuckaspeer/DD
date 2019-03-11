@@ -10,9 +10,11 @@ import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Button from "@material-ui/core/Button";
 import Divider from "@material-ui/core/Divider";
-import Checkboxes from "./CheckBoxes";
-import Comments from "./Comments";
+import Checkboxes from "../Accommodations/CheckBoxes";
+import Comments from "../Accommodations/Comments";
 import { spEdStudents } from "../../utils/Data";
+
+import TabContainer from "./TabContainer";
 
 const styles = theme => ({
   root: {
@@ -67,38 +69,12 @@ class AccomPanel extends Component {
                 <Typography className={classes.heading}>
                   {students.first_name}, {students.last_name}
                 </Typography>
-                <div>
-                  <h5
-                    variant="contained"
-                    key={students.id}
-                    selected={id === this.state.selectedIndex}
-                    onClick={event => this.handleButtonClick(event, id)}
-                  >
-                    <ul>
-                      <div />
-                    </ul>
-                  </h5>
-                </div>
-              </div>
-              <div className={classes.column}>
-                <Typography className={classes.secondaryHeading}>
-                  Accomidations
-                </Typography>
-              </div>
-              <div className={classes.column}>
-                <Typography className={classes.secondaryHeading}>
-                  Behavior
-                </Typography>
-              </div>
-              <div className={classes.column}>
-                <Typography className={classes.secondaryHeading}>
-                  Goals
-                </Typography>
-              </div>
+               
+              </div>     <TabContainer/>
             </ExpansionPanelSummary>
-            
-              <Checkboxes className={classes}/>
-            
+
+            <Checkboxes className={classes} />
+
             <Divider />
             <ExpansionPanelActions>
               <Comments />

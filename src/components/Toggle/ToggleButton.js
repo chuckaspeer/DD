@@ -5,8 +5,13 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import ClassView from '../ClassRm/ClassView'
-import AccomPanel from '../Accommodations/AccomPanel'
+import AccomPanel from '../DropPanel/AccomPanel'
+import { withStyles } from "@material-ui/core/styles";
 
+const styles = theme => ({
+  root: {
+    width: "100%"
+  },})
 class ToggleButton extends React.Component {
   state = {
     ToggleSwitch: false
@@ -23,8 +28,9 @@ class ToggleButton extends React.Component {
     } else {
       AccomView = <ClassView />;
     }
+    const {classes} = this.props;
     return (
-      <>
+      <div className={classes.root}>
       <FormControl component="fieldset">
         <FormLabel component="legend">Student/Class-views</FormLabel>
         <FormGroup>
@@ -42,9 +48,9 @@ class ToggleButton extends React.Component {
       
       </FormControl>
             <div>{AccomView}</div>
-      </>
+      </div>
     );
   }
 }
 
-export default ToggleButton;
+export default withStyles(styles)(ToggleButton);

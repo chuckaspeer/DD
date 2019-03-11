@@ -246,5 +246,18 @@ module.exports = {
       class_color1: "Purple",
       class_color2: "Turquoise"
     }
+  ],
+  behaivor:[
+"Sleeping in Class",
+"Talking to classmate",
+"Fighting",
+"Refusal to do work",
+"Cell phone use"
+  ],
+  panels:[
+    "Profile",
+    "Accommodations",
+    "Behavior",
+    "Objectives"
   ]
 };

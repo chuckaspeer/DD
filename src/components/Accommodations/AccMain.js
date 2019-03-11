@@ -30,6 +30,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import CheckBoxes from "./CheckBoxes";
  import Comments from "./Comments";
+import TabContainer from '../DropPanel/TabContainer';
 const styles = {
   card: {
     minWidth: 275,
@@ -49,9 +50,10 @@ const styles = {
 
 function SimpleCard(props) {
   const { classes} =  props;
- 
+ const {vaule} = props;
 
   return (
+    <TabContainer>
     <Card className={classes.card}>
       <CardContent>
         <CheckBoxes/>
@@ -59,29 +61,12 @@ function SimpleCard(props) {
        <CardContent>
         <Comments/>
        </CardContent>
-        {/* <Typography className={classes.title} color="textSecondary" gutterBottom>
-          Word of the Day
-        </Typography>
-        <Typography variant="h5" component="h2">
-          be
-          {bull}
-          nev
-          {bull}o{bull}
-          lent
-        </Typography>
-        <Typography className={classes.pos} color="textSecondary">
-          adjective
-        </Typography>
-        <Typography component="p">
-          well meaning and kindly.
-          <br />
-          {'"a benevolent smile"'}
-        </Typography> */}
+        
       
       <CardActions> 
         <Button size="small">Some</Button>
       </CardActions>
-    </Card>
+    </Card></TabContainer>
   );
 }
 
