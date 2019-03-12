@@ -34,11 +34,11 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return "Select campaign settings...";
-    case 1:
       return <Student1 />;
-    case 2:
+    case 1:
       return <Student2 />;
+    case 2:
+      return "Select campaign settings...";
     case 3:
       return "I'm Out!";
     default:
@@ -130,18 +130,18 @@ class Steppers extends React.Component {
         <div>
           {activeStep === steps.length ? (
             <div>
-              <Typography className={classes.instructions}>
+              <div className={classes.instructions}>
                 All steps completed - you&apos;re finished
-              </Typography>
+              </div>
               <Button onClick={this.handleReset} className={classes.button}>
                 Reset
               </Button>
             </div>
           ) : (
             <div>
-              <Typography className={classes.instructions}>
+              <div className={classes.instructions}>
                 {getStepContent(activeStep)}
-              </Typography>
+              </div>
               <div>
                 <Button
                   disabled={activeStep === 0}

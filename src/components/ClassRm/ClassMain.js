@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import ToggleButton from '../Toggle/ToggleButton'
-import { createMuiTheme } from "@material-ui/core";
+// import { createMuiTheme } from "@material-ui/core";
 
 
-const theme = createMuiTheme({
-  ToggleButton:{
-
-  }
-})
+// const theme = createMuiTheme({
+//   ToggleButton:{
+// display:"flex"
+//   }
+// })
 class ClassMain extends Component {
   render(props) {
 
@@ -15,7 +15,7 @@ class ClassMain extends Component {
       <div>
         <div display ="flex">ClassMain</div>
       
-        <div><ToggleButton display ="flex" /></div>
+        <div><ToggleButton /></div>
         
         
 

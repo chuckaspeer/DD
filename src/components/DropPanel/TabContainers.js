@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import {Paper} from "@material-ui/core";
+// import {Paper} from "@material-ui/core";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Typography } from "@material-ui/core";
@@ -48,18 +48,19 @@ class ScrollableTabsButtonAuto extends React.Component {
             indicatorColor="primary"
             textColor="primary"
             centered
-            // variant="scrollable"
-            // scrollButtons="auto"
+            //  variant="scrollable"
+            scrollButtons="auto"
           >
             <Tab label="Profile" />
             <Tab label="Accomodations" />
             <Tab label="Behavior" />
             <Tab label="Uploads" />
-            <Tab label="Reports" />
+            
            
           </Tabs>
         {/* </Paper> */}
-        {/* {value === 0 && <TabContainer>Item One</TabContainer>}
+{/*         
+        {value === 0 && <TabContainer>Item One</TabContainer>}
         {value === 1 && <TabContainer>Item Two</TabContainer>}
         {value === 2 && <TabContainer>Item Three</TabContainer>}
         {value === 3 && <TabContainer>Item Four</TabContainer>}

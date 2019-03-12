@@ -6,16 +6,16 @@ import ExpansionPanel from "@material-ui/core/ExpansionPanel";
 import ExpansionPanelDetails from "@material-ui/core/ExpansionPanelDetails";
 import ExpansionPanelSummary from "@material-ui/core/ExpansionPanelSummary";
 import ExpansionPanelActions from "@material-ui/core/ExpansionPanelActions";
-import Typography from "@material-ui/core/Typography";
+
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Button from "@material-ui/core/Button";
-import Divider from "@material-ui/core/Divider";
+import {Divider} from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import Checkboxes from "../Accommodations/CheckBoxes";
 import Comments from "../Accommodations/Comments";
 import { spEdStudents } from "../../utils/Data";
 
-import TabContainer from "./TabContainer";
+import TabContainer from "./TabContainers";
 
 const styles = theme => ({
   root: {
@@ -73,8 +73,10 @@ class AccomPanel extends Component {
               </Paper>
               <TabContainer />
             </ExpansionPanelSummary>
-
+            <ExpansionPanelDetails>
             <Checkboxes className={classes} />
+  
+            </ExpansionPanelDetails>
 
             <Divider />
             <ExpansionPanelActions>
