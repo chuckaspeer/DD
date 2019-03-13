@@ -254,11 +254,11 @@ module.exports = {
 "Refusal to do work",
 "Cell phone use"
   ],
-  panels:[
+  panelsTabs:[
     "Profile",
     "Accommodations",
     "Behavior",
     "Objectives"
   ],
-  panelTabs: ["Profile", "Accommodations", "Behavior", "Objectives"]
+  
 };

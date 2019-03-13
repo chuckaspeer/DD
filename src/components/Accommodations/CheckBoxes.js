@@ -37,7 +37,7 @@ const CheckBoxes = () => (
               
               <ul>
          <li><Checkbox variant="contained" style={styles.button}/>
-          Hello from CheckBox1sdfasdfsadf sadfasdf sd asd fasdf asdfasdfasdfas</li> 
+          Hello from CheckBox1</li> 
           <li><Checkbox variant="contained" style={styles.button}/>
           Hello from CheckBox2</li>
           <li><Checkbox variant="contained" style={styles.button}/>

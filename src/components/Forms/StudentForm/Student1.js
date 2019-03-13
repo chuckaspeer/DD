@@ -59,15 +59,15 @@ class TextFields extends React.Component {
 
     return (
       <div className={classes.container} noValidate autoComplete="off">
-      <span>Add Student</span>
-      <br/>
+        <h2>Profile</h2>
+        <br />
         <TextField
           id="standard-dense"
           label="student_last_name"
           className={classNames(classes.textField, classes.dense)}
           margin="dense"
         />
-<TextField
+        <TextField
           id="standard-dense"
           label="student_first_name"
           className={classNames(classes.textField, classes.dense)}
@@ -101,13 +101,13 @@ class TextFields extends React.Component {
           id="standard-number"
           label="Grade level"
           value={this.state.age}
-          onChange={this.handleChange('age')}
+          onChange={this.handleChange("age")}
           type="number"
           className={classes.textField}
           InputLabelProps={{
-            shrink: true,
+            shrink: true
           }}
-          margin="denise"
+          margin="dense"
         />
 
         <TextField

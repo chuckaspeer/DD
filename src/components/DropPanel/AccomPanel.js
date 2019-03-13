@@ -13,7 +13,7 @@ import {Divider} from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import Checkboxes from "../Accommodations/CheckBoxes";
 import Comments from "../Accommodations/Comments";
-import { spEdStudents } from "../../utils/Data";
+import { spEdStudents } from "../../utils/MockData/Data";
 
 import TabContainer from "./TabContainers";
 

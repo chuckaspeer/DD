@@ -30,7 +30,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import CheckBoxes from "./CheckBoxes";
  import Comments from "./Comments";
-import TabContainer from '../DropPanel/TabContainer';
+import TabContainers from '../DropPanel/TabContainers';
 const styles = {
   card: {
     minWidth: 275,
@@ -53,7 +53,7 @@ function SimpleCard(props) {
  const {vaule} = props;
 
   return (
-    <TabContainer>
+    <TabContainers>
     <Card className={classes.card}>
       <CardContent>
         <CheckBoxes/>
@@ -66,7 +66,7 @@ function SimpleCard(props) {
       <CardActions> 
         <Button size="small">Some</Button>
       </CardActions>
-    </Card></TabContainer>
+    </Card></TabContainers>
   );
 }
 
