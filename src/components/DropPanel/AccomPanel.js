@@ -77,7 +77,7 @@ class AccomPanel extends Component {
   }
 
   render() {
-    const { classes, children } = this.props;
+    const { classes } = this.props;
     const {spEdAccommodation} = this.getCheckboxesBySpEd();
     return (
       <div className={classes.root}>
