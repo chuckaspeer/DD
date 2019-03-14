@@ -9,13 +9,14 @@ import ExpansionPanelActions from "@material-ui/core/ExpansionPanelActions";
 
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Button from "@material-ui/core/Button";
-import {Divider} from "@material-ui/core";
+import { Divider } from "@material-ui/core";
 import Paper from "@material-ui/core/Paper";
 import Checkboxes from "../Accommodations/CheckBoxes";
 import Comments from "../Accommodations/Comments";
-import { spEdStudents } from "../../utils/MockData/Data";
+import { spEdStudents, panelsTabs } from "../../utils/MockData/Data";
+import { spEdAccommodations } from "../../utils/MockData/DataCheckBoxes";
 
-import TabContainer from "./TabContainers";
+import TabContainers from "./TabContainers";
 
 const styles = theme => ({
   root: {
@@ -53,14 +54,31 @@ const styles = theme => ({
 });
 class AccomPanel extends Component {
   state = {
-    selectedIndex: []
+    selectedIndex: [],
+    spEdAccommodations
   };
 
   handleButtonClick = (event, index) => {
     this.setState({ selectedIndex: index, anchorEl: null });
   };
+
+  getCheckboxesBySpEd() {
+    return Object.entries(
+      this.state.spEdAccommodations.reduce(
+      (spEdAccommodations, spEdAccommodation) => {
+        const { text, id } = spEdAccommodation;
+        spEdAccommodations[id] = spEdAccommodations[text]
+          ? [...spEdAccommodations[text], spEdAccommodation]
+          : [spEdAccommodation];
+        return spEdAccommodations;
+      },
+      {})
+    );
+  }
+
   render() {
-    const { classes } = this.props;
+    const { classes, children } = this.props;
+    const {spEdAccommodation} = this.getCheckboxesBySpEd();
     return (
       <div className={classes.root}>
         {spEdStudents.map((students, id) => (
@@ -71,11 +89,22 @@ class AccomPanel extends Component {
                   {students.first_name}, {students.last_name}
                 </div>
               </Paper>
-              <TabContainer />
+              <TabContainers
+                panelsTabs={panelsTabs}
+                spEdStudents={spEdStudents}
+              />
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-            <Checkboxes className={classes} />
-  
+              
+              {spEdAccommodations.map((spEdAccommodation,text) =>
+                  <Paper key={text}>
+                    {spEdAccommodation.text}
+                  </Paper>
+                )}
+              <Checkboxes
+                className={classes}
+                spEdAccommodation={spEdAccommodation}
+              />
             </ExpansionPanelDetails>
 
             <Divider />

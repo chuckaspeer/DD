@@ -42,10 +42,9 @@ class ClassSpEd extends Component {
           <Card className={classes.card}>
             <div>
               {spEdStudents.map((student, id) => (
-                <CardContent key = {id}>
-                  <Button
+                <CardContent key = {id}
                     variant="contained"
-                    className={classes.button}
+                    className={classes.card}
                     component={Link}
                     to={`/student/:id`}
                     key={student.id}
@@ -54,7 +53,6 @@ class ClassSpEd extends Component {
                   >
                   
                    {student.first_name}, {student.last_name}
-                  </Button>
                 </CardContent>
               ))}
             </div>

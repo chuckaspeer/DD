@@ -1,5 +1,5 @@
 module.exports = {
-    spEdAccommodations =[
+    spEdAccommodations :[
         {
             id: 1,
             text: "Try to do better"
@@ -20,7 +20,7 @@ module.exports = {
             text: "What the hell is wrong with you"
         }
     ],
-    BehavoirAccommodations =[
+    BehavoirAccommodations :[
         {
             id: 1,
             text: "Sleeping in class"

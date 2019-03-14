@@ -258,7 +258,7 @@ module.exports = {
     "Profile",
     "Accommodations",
     "Behavior",
-    "Objectives"
+    "Uploads"
   ],
   
 };
