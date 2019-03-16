@@ -260,5 +260,23 @@ module.exports = {
     "Behavior",
     "Uploads"
   ],
-  
+  PanelTabs:[
+    {
+      id:1,
+      panelTab:"Profile",
+    },
+    {
+      id:2,
+      panelTab:"Accomms",
+    },
+    {
+      id:3,
+      panelTab:"BeHave",
+    },
+    {
+      id:4,
+      panelTab:"UpLoad",
+    }
+    
+  ]
 };

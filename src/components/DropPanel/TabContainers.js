@@ -6,6 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { Typography } from "@material-ui/core";
 
+
 function TabContainer(props) {
   return (
     <Typography component="div" style={{ padding: 8 * 3 }}>
@@ -28,8 +29,24 @@ const styles = theme => ({
 
 class ScrollableTabsButtonAuto extends React.Component {
   state = {
-    value: 0
+    value: 0,
+    children:[]
   };
+
+  getCheckboxesBySpEd() {
+    return Object.entries(
+      this.state.spEdAccommodations.reduce(
+        (spEdAccommodations, spEdAccommodation) => {
+          const { text, id } = spEdAccommodation;
+            spEdAccommodations[id] = spEdAccommodations[text]
+             ? [...spEdAccommodations[text], spEdAccommodation]
+             : [spEdAccommodation];
+          return spEdAccommodations;
+        },
+        {}
+      )
+    );
+  }
 
   handleChange = (event, value) => {
     this.setState({ value });
@@ -38,6 +55,7 @@ class ScrollableTabsButtonAuto extends React.Component {
   render() {
     const { classes, panelsTabs } = this.props;
     const { value } = this.state;
+    
 
     // console.log(spEdStudents)
     return (
@@ -54,8 +72,12 @@ class ScrollableTabsButtonAuto extends React.Component {
           scrollButtons="auto"
         >
           
-          {panelsTabs.map(panelT => (
-            <Tab key={panelT} label={panelT} />
+          {panelsTabs.map((panelT, index) => (
+            <Tab 
+            key={panelT} 
+        
+            label={panelT} 
+            ></Tab>
           ))}
         </Tabs>
         

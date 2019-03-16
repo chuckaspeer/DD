@@ -6,8 +6,8 @@ import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Student1 from "./Student1";
-import Student2 from "./Student2";
+import Student1 from "./TStudent1";
+import Student2 from "./TStudent2";
 
 const styles = theme => ({
   root: {
@@ -31,10 +31,10 @@ function getSteps() {
   ];
 }
 
-function getStepContent(step) {
+function getStepContent(step, studentInfo) {
   switch (step) {
     case 0:
-      return <Student1 />;
+      return <Student1 studentInfo={studentInfo} />;
     case 1:
       return <Student2 />;
     case 2:
@@ -114,7 +114,10 @@ class Steppers extends React.Component {
     const { classes } = this.props;
     const steps = getSteps();
     const { activeStep } = this.state;
-
+    const {id, stateId, first_name, last_name,district,campus,grade_level,aP,counselor} = this.state
+    const studentInfo ={id, stateId, first_name, last_name,district,campus,grade_level,aP,counselor}
+    console.log(studentInfo);
+    
     return (
       <div className={classes.root}>
         <Stepper activeStep={activeStep}>
@@ -147,8 +150,8 @@ class Steppers extends React.Component {
               </Button>
             </div>
           ) : (
-            <div>
-              <div className={classes.instructions}>
+            <div >
+              <div className={classes.instructions} >
                 {getStepContent(activeStep)}
               </div>
               <div>

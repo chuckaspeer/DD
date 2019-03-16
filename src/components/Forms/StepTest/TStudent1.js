@@ -43,16 +43,7 @@ const currencies = [
 
 class TextFields extends React.Component {
   state = {
-    id: "",
-    stateId: "",
-    first_name: "",
-    last_name: "",
-    district: [],
-    campus: [],
-    grade_level: [],
-    aP: [],
-    counselor: [],
-
+   
     name: "Cat in the Hat",
     age: "",
     multiline: "Controlled",
@@ -65,7 +56,9 @@ class TextFields extends React.Component {
 
   render() {
     const { classes } = this.props;
-console.log(this.state);
+    const {studentInfo} = this.props
+    
+console.log(studentInfo);
 
     return (
       <div className={classes.container} noValidate autoComplete="off">

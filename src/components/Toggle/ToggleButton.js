@@ -5,7 +5,7 @@ import FormGroup from "@material-ui/core/FormGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import ClassView from '../ClassRm/ClassView'
-import AccomPanel from '../DropPanel/AccomPanel'
+import AccomPanel from '../DropPanel/MainPanel'
 import { withStyles } from "@material-ui/core/styles";
 
 const styles = theme => ({
@@ -24,7 +24,7 @@ class ToggleButton extends React.Component {
   render() {
     let AccomView
     if (!this.state.ToggleSwitch) {
-      AccomView = <AccomPanel/>;
+      AccomView = <AccomPanel key={AccomPanel.id}/>;
     } else {
       AccomView = <ClassView />;
     }
