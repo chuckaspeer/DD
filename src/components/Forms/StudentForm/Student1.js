@@ -53,10 +53,6 @@ class TextFields extends React.Component {
     aP: [],
     counselor: [],
 
-    name: "Cat in the Hat",
-    age: "",
-    multiline: "Controlled",
-    currency: "EUR"
   };
 
   handleChange = name => event => {
@@ -70,7 +66,7 @@ console.log(this.state);
     return (
       <div className={classes.container} noValidate autoComplete="off">
         <h2>ADD NEW STUDENT</h2>
-        <br />{" "}
+        <br />
         <TextField
           id="standard-dense"
           label="student_first_name"
