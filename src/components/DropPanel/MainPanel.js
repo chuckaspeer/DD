@@ -16,9 +16,8 @@ import Checkboxes from "../Accommodations/CheckBoxes";
 import Comments from "../Accommodations/Comments";
 import { spEdStudents, panelsTabs } from "../../utils/MockData/Data";
 import { spEdAccommodations } from "../../utils/MockData/DataCheckBoxes";
-import AccomPanel from './Panels/AccomPanel'
+// import AccomPanel from './Panels/AccomPanel'
 import TabContainers from "./TabContainers";
-
 
 const styles = theme => ({
   root: {
@@ -77,7 +76,7 @@ class MainPanel extends Component {
           spEdAccommodations[id] = spEdAccommodations[text]
             ? [...spEdAccommodations[text], spEdAccommodation]
             : [spEdAccommodation];
-          return spEdAccommodations;
+          return spEdAccommodation;
         },
         {}
       )
@@ -86,41 +85,38 @@ class MainPanel extends Component {
 
   render() {
     const { classes } = this.props;
-    
     // const { spEdAccommodations } = this.getCheckboxesBySpEd();
     const spEdAccomms = spEdAccommodations.map((spEdAccommodation, id) => {
+      /*console.log(spEdAccommodations);*/
+      // console.log(spEdAccommodation);
       return (
         <Paper key={id} className={classes.paper}>
-          <Checkboxes
-            className={classes}
-            spEdAccommodation={spEdAccommodations}
-          />
+          <Checkboxes className={classes} spEdAccommodation />
           {spEdAccommodations.spEdAccommodation}
         </Paper>
       );
     });
     const AccomText = spEdAccommodations.map((id, text) => {
       return (
-        <Paper key={text} className={classes.heading}>
-          {id.text}
+        <Paper key={text} className={classes.paper}>
+          <Paper key={text} />
         </Paper>
       );
     });
-    console.log(spEdAccomms.id);
-    console.log(spEdAccommodations.id);
-    console.log(spEdAccommodations);
-    console.log(AccomText);
+    // console.log(spEdAccomms.id);
+    // console.log(spEdAccommodations.id);
+    // console.log(spEdAccommodations);
+    // console.log(AccomText);
 
-    //  const {spEdAccommodation, text} = spEdAccomms
+    //const {spEdAccommodation, text} = spEdAccomms
+    
     return (
       <div className={classes.root}>
         {spEdStudents.map((students, id) => (
           <ExpansionPanel key={students.id} className={classes.coulmn}>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
-              <div className={classes.Header} >
-                <div className={classes.root}>
-                  {students.first_name}, {students.last_name}
-                </div>
+              <div className={classes.Header}>
+                {students.first_name}, {students.last_name}
               </div>
               <TabContainers panelsTabs={panelsTabs} />
             </ExpansionPanelSummary>
@@ -130,13 +126,12 @@ class MainPanel extends Component {
                   <Grid item xs={3} align="centered">
                     <Paper>{spEdAccomms}</Paper>
                   </Grid>
-                  <Grid  item xs={8}>
-                    <Paper  className={classes.heading} label={AccomText}>
-                      {AccomText}
+                  <Grid item xs={8}>
+                    <Paper className={classes.heading} label={AccomText}>
+                      {AccomText} hello
                     </Paper>
                   </Grid>
                 </Grid>
-                <AccomPanel />
               </ExpansionPanelDetails>
             </div>
             <Divider />

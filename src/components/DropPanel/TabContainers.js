@@ -27,67 +27,71 @@ const styles = theme => ({
   }
 });
 
-class ScrollableTabsButtonAuto extends React.Component {
+class TabContainerClass
+ extends React.Component {
   state = {
     value: 0,
-    children:[]
+    children: []
   };
 
-  getCheckboxesBySpEd() {
-    return Object.entries(
-      this.state.spEdAccommodations.reduce(
-        (spEdAccommodations, spEdAccommodation) => {
-          const { text, id } = spEdAccommodation;
-            spEdAccommodations[id] = spEdAccommodations[text]
-             ? [...spEdAccommodations[text], spEdAccommodation]
-             : [spEdAccommodation];
-          return spEdAccommodations;
-        },
-        {}
-      )
-    );
-  }
+  // getCheckboxesBySpEd() {
+  //   return Object.entries(
+  //     this.state.spEdAccommodations.reduce(
+  //       (spEdAccommodations, spEdAccommodation) => {
+  //         const { text, id } = spEdAccommodation;
+          
+          
+  //         spEdAccommodations[id] = spEdAccommodations[text]
+  //           ? [...spEdAccommodations[text], spEdAccommodation]
+  //           : [spEdAccommodation];
+
+  //         return spEdAccommodations;
+  //       },
+  //       {}
+  //     )
+  //   );
+  // }
 
   handleChange = (event, value) => {
     this.setState({ value });
   };
 
   render() {
-    const { classes, panelsTabs } = this.props;
-    const { value } = this.state;
-    
+    // console.log(this.state)
+    // console.log(this.value);
 
-    // console.log(spEdStudents)
+    const { classes, panelsTabs, students } = this.props;
+    const { value } = this.state;
+    // const { first_name, last_name}  = this.props;
+
+    //  console.log(this.props);
+     console.log(students);
+     
     return (
       <div className={classes.root}>
         {/* <Paper position="absolute" color="default"> */}
-        
+
         <Tabs
           value={value}
           onChange={this.handleChange}
           indicatorColor="primary"
           textColor="primary"
-         
           //  variant="scrollable"
           scrollButtons="auto"
         >
           
           {panelsTabs.map((panelT, index) => (
-            <Tab 
-            key={panelT} 
-        
-            label={panelT} 
-            ></Tab>
+            <Tab key={panelT} label={panelT} />
           ))}
         </Tabs>
-        
       </div>
     );
   }
 }
 
-ScrollableTabsButtonAuto.propTypes = {
+TabContainerClass.propTypes = {
   classes: PropTypes.object.isRequired
 };
 
-export default withStyles(styles)(ScrollableTabsButtonAuto);
+export default withStyles(styles)(TabContainerClass
+  );
