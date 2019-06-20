@@ -56,16 +56,18 @@ class TabContainerClass
     this.setState({ value });
   };
 
+
   render() {
     // console.log(this.state)
     // console.log(this.value);
+    
 
-    const { classes, panelsTabs, students } = this.props;
+    const { classes, panelsTabs } = this.props;
     const { value } = this.state;
     // const { first_name, last_name}  = this.props;
 
     //  console.log(this.props);
-     console.log(students);
+    
      
     return (
       <div className={classes.root}>

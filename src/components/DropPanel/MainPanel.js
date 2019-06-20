@@ -18,7 +18,8 @@ import { spEdStudents, panelsTabs } from "../../utils/MockData/Data";
 import { spEdAccommodations } from "../../utils/MockData/DataCheckBoxes";
 // import AccomPanel from './Panels/AccomPanel'
 import TabContainers from "./TabContainers";
-
+//import Tabs from "@material-ui/core/Tabs";
+import Tab from "@material-ui/core/Tab";
 const styles = theme => ({
   root: {
     width: "100%"
@@ -87,8 +88,10 @@ class MainPanel extends Component {
     const { classes } = this.props;
     // const { spEdAccommodations } = this.getCheckboxesBySpEd();
     const spEdAccomms = spEdAccommodations.map((spEdAccommodation, id) => {
-      /*console.log(spEdAccommodations);*/
+      // console.log(spEdAccommodations);
       // console.log(spEdAccommodation);
+      // console.log(spEdAccomms);
+      
       return (
         <Paper key={id} className={classes.paper}>
           <Checkboxes className={classes} spEdAccommodation />
@@ -96,10 +99,12 @@ class MainPanel extends Component {
         </Paper>
       );
     });
-    const AccomText = spEdAccommodations.map((id, text) => {
+    const AccomText = spEdAccommodations.map((SpEdAccommodation, text) => {
+   
+      
       return (
         <Paper key={text} className={classes.paper}>
-          <Paper key={text} />
+          {/* <Paper label={SpEdAccommodation} /> */}
         </Paper>
       );
     });
@@ -107,26 +112,27 @@ class MainPanel extends Component {
     // console.log(spEdAccommodations.id);
     // console.log(spEdAccommodations);
     // console.log(AccomText);
-
+   console.log();
     //const {spEdAccommodation, text} = spEdAccomms
     
     return (
       <div className={classes.root}>
         {spEdStudents.map((students, id) => (
+
           <ExpansionPanel key={students.id} className={classes.coulmn}>
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <div className={classes.Header}>
-                {students.first_name}, {students.last_name}
+                
               </div>
-              <TabContainers panelsTabs={panelsTabs} />
+              <TabContainers panelsTabs={panelsTabs}> <Tab>{students.first_name}, {students.last_name}</Tab></TabContainers>
             </ExpansionPanelSummary>
             <div>
               <ExpansionPanelDetails>
                 <Grid container spacing={24}>
-                  <Grid item xs={3} align="centered">
+                  <Grid item xs={4} align="centered">
                     <Paper>{spEdAccomms}</Paper>
                   </Grid>
-                  <Grid item xs={8}>
+                  <Grid item xs={3}>
                     <Paper className={classes.heading} label={AccomText}>
                       {AccomText} hello
                     </Paper>
